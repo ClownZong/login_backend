@@ -19,7 +19,7 @@ func login(c *gin.Context) {
 		Password string `json:"password"`
 	}
 	var loginInfo Login
-	if err := c.ShouldBindJson(&loginInfo); err != nil {
+	if err := c.ShouldBindJSON(&loginInfo); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
